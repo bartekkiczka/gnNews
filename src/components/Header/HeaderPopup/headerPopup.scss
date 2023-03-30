@@ -1,0 +1,67 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.header-popup {
+  &__overlay {
+    @include defaultTransition;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    z-index: 2;
+
+    &-disabled {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background-color: $c-mainThemeColor;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__content {
+    @include defaultTransition;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 30px;
+    border: 2px solid black;
+    background-color: white;
+    transform: translate(-50%, -50%) scale(1);
+
+    &-disabled {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+}

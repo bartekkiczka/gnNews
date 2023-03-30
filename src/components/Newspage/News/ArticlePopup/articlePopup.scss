@@ -1,0 +1,93 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.article-overlay {
+  @include defaultTransition;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  z-index: 100;
+
+  &-disabled {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .article {
+    @include defaultTransition;
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    padding: 20px 30px;
+    border: 2px solid black;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    &-disabled {
+      transform: translate(-50%, -50%) scale(0);
+    }
+
+    &__cross {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $c-mainThemeColor;
+        width: 100%;
+        height: 2px;
+
+        top: 50%;
+        left: 50%;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    &__heading {
+      display: flex;
+
+      p {
+        &:first-of-type {
+          padding-right: 10px;
+          border-right: 1px solid black;
+        }
+        &:last-of-type {
+          padding-left: 10px;
+        }
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__link a {
+      color: $c-mainThemeColor;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 10px;
+  background-color: $c-mainThemeColor;
+  color: white;
+}

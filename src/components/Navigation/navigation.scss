@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.navigation {
+  width: 20%;
+  min-width: 200px;
+  min-height: 100%;
+  border-right: 2px solid black;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__country {
+    @include defaultTransition;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+    &:hover,
+    &-selected {
+      background-color: $c-mainThemeColor;
+      color: white;
+
+      img {
+        border: 1px solid white;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      margin-right: 20px;
+      border: 1px solid black;
+    }
+
+    &-selected img {
+      border: 1px solid white;
+    }
+
+    &-flag-wrapper {
+      width: 75px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    min-width: 135px;
+    &__country {
+      flex-direction: column;
+      text-align: center;
+
+      p,
+      img {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "polish": "Polish",
+    "english": "English"
+  },
+  "navigation": {
+    "poland": "Poland",
+    "portugal": "Portugal",
+    "germany": "Germany",
+    "france": "France",
+    "switzerland": "Switzerland",
+    "japan": "Japan",
+    "singapore": "Singapore"
+  },
+  "news": {
+    "teaserUnavailable": "Teaser unavailable"
+  },
+  "article": {
+    "source": "Source",
+    "contentUnavailable": "Content unavailable"
+  },
+  "footer": {
+    "displayedArticles": "Number of articles displayed"
+  }
+}

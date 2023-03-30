@@ -1,0 +1,36 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.news-list {
+  &__item {
+    @include defaultTransition;
+    width: 100%;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $c-mainThemeColor;
+      p {
+        color: white;
+      }
+    }
+
+    p {
+      padding: 0 20px;
+    }
+
+    &-heading {
+      display: flex;
+
+      p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: $c-mainThemeColor;
+
+        &:first-of-type {
+          border-right: 1px solid black;
+        }
+      }
+    }
+  }
+}
